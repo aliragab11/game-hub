@@ -8,17 +8,11 @@ function App() {
         <Navbar />
       </GridItem>
 
-      <GridItem
-        colSpan={1}
-        display={{ base: 'none', lg: 'block' }}
-        bg="green.300"
-      >
+      <GridItem colSpan={1} display={{ base: 'none', lg: 'block' }}>
         Aside
       </GridItem>
 
-      <GridItem colSpan={{ base: 2, lg: 1 }} bg="blue.200">
-        Main
-      </GridItem>
+      <GridItem colSpan={{ base: 2, lg: 1 }}>Main</GridItem>
     </Grid>
   );
 }
