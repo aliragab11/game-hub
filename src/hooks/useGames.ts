@@ -22,10 +22,7 @@ const useGames = () => {
     const controller = new AbortController();
     apiClient
       .get<FetchGamesResponse>('/games', { signal: controller.signal })
-      .then((res) => {
-        setGames(res.data.results);
-        console.log(res.data.results);
-      })
+      .then((res) => setGames(res.data.results))
       .catch((err: AxiosError) => {
         if (err instanceof CanceledError) return;
         setError(err.message);
