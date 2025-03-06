@@ -1,10 +1,11 @@
 import { Grid, GridItem } from '@chakra-ui/react';
+import Navbar from './components/custom/Navbar';
 
 function App() {
   return (
     <Grid templateColumns={`150px 1fr`}>
-      <GridItem colSpan={2} bg="red.500">
-        Nav
+      <GridItem colSpan={2}>
+        <Navbar />
       </GridItem>
 
       <GridItem
