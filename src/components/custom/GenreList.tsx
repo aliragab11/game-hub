@@ -9,9 +9,9 @@ interface Props {
 }
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { data: genres, isLoading } = useGenres();
+  const { data: genres, isLoading, error } = useGenres();
   const skeletons = Array.from({ length: 12 }, (_, i) => i + 1);
-
+  if (error) return null;
   return (
     <List.Root listStyle={'none'}>
       {isLoading && skeletons.map((el) => <GenreItemSkeleton key={el} />)}
