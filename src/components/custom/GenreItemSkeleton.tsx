@@ -4,7 +4,7 @@ const GenreItemSkeleton = () => {
   return (
     <HStack paddingY={1}>
       <SkeletonCircle size="10" />
-      <SkeletonText noOfLines={1} h={7} width={'80%'} />
+      <SkeletonText noOfLines={1} h={6} />
     </HStack>
   );
 };
