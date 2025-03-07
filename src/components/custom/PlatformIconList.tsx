@@ -10,7 +10,8 @@ import {
   FaXbox,
 } from 'react-icons/fa6';
 import { MdPhoneIphone } from 'react-icons/md';
-import { SiNintendo } from 'react-icons/si';
+import { SiNintendo, SiSega } from 'react-icons/si';
+import { FaGamepad } from 'react-icons/fa';
 import { Platform } from '../../hooks/useGames';
 
 interface Props {
@@ -28,7 +29,10 @@ const PlatformIconList = ({ platforms }: Props) => {
     ios: MdPhoneIphone,
     web: BsGlobe,
     android: FaAndroid,
+    sega: SiSega,
+    'neo-geo': FaGamepad,
   };
+
   return (
     <HStack>
       {platforms.map((platform) => (
