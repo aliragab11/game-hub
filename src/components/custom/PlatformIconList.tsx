@@ -31,6 +31,9 @@ const PlatformIconList = ({ platforms }: Props) => {
     android: FaAndroid,
     sega: SiSega,
     'neo-geo': FaGamepad,
+    'commodore-amiga': FaGamepad,
+    atari: FaGamepad,
+    '3do': FaGamepad,
   };
 
   return (
