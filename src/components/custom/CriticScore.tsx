@@ -5,9 +5,10 @@ interface Props {
 }
 const CriticScore = ({ score }: Props) => {
   const color = score >= 75 ? 'green' : score >= 60 ? 'yellow' : '';
+  const criticScore = score ?? 0;
   return (
     <Badge size="md" colorPalette={color}>
-      {score}
+      {criticScore}
     </Badge>
   );
 };
