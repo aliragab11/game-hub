@@ -5,12 +5,12 @@ import GenreList from './components/custom/GenreList';
 
 function App() {
   return (
-    <Grid templateColumns={`150px 1fr`}>
+    <Grid templateColumns={`200px 1fr`}>
       <GridItem colSpan={2}>
         <Navbar />
       </GridItem>
 
-      <GridItem colSpan={1} display={{ base: 'none', lg: 'block' }}>
+      <GridItem colSpan={1} display={{ base: 'none', lg: 'block' }} px={5}>
         <GenreList />
       </GridItem>
 
