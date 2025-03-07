@@ -14,7 +14,10 @@ function App() {
       </GridItem>
 
       <GridItem colSpan={1} display={{ base: 'none', lg: 'block' }} px={5}>
-        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+        <GenreList
+          onSelectGenre={(genre) => setSelectedGenre(genre)}
+          selectedGenre={selectedGenre}
+        />
       </GridItem>
 
       <GridItem colSpan={{ base: 2, lg: 1 }}>
