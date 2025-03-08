@@ -15,7 +15,10 @@ const ColorModeSwitch = () => {
           <Switch.Thumb />
         </Switch.Control>
 
-        <Switch.Label display={{ base: 'none', sm: 'block' }}>
+        <Switch.Label
+          display={{ base: 'none', sm: 'block' }}
+          whiteSpace={'nowrap'}
+        >
           {colorMode === 'dark' ? 'Dark Mode' : 'Light Mode'}
         </Switch.Label>
       </Switch.Root>
