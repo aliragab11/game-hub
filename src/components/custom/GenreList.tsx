@@ -5,10 +5,10 @@ import GenreItemSkeleton from './GenreItemSkeleton';
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data: genres, isLoading, error } = useGenres();
   const skeletons = Array.from({ length: 12 }, (_, i) => i + 1);
   if (error) return null;
@@ -35,7 +35,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
                 textAlign={'left'}
                 onClick={() => onSelectGenre(genre)}
-                fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
+                fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal'}
               >
                 {genre.name}
               </Button>
