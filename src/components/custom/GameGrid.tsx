@@ -1,4 +1,4 @@
-import { SimpleGrid, Spinner, Text } from '@chakra-ui/react';
+import { Box, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import useGames from '../../hooks/useGames';
@@ -19,23 +19,39 @@ const GameGrid = () => {
   const fetchedGamesCount =
     games?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
   return (
-    <InfiniteScroll
-      dataLength={fetchedGamesCount}
-      next={() => fetchNextPage()}
-      hasMore={hasNextPage}
-      loader={<Spinner />}
-    >
-      <SimpleGrid columns={{ sm: 2, md: 2, lg: 3, xl: 4 }} gap={4} p={'10px'}>
-        {isLoading && skeletons.map((el) => <GameCardSkeleton key={el} />)}
-        {games?.pages.map((game, index) => (
-          <React.Fragment key={index}>
-            {game?.results.map((game) => (
-              <GameCard key={game.id} game={game} />
-            ))}
-          </React.Fragment>
-        ))}
-      </SimpleGrid>
-    </InfiniteScroll>
+    <>
+      <InfiniteScroll
+        dataLength={fetchedGamesCount}
+        next={() => fetchNextPage()}
+        hasMore={hasNextPage}
+        loader={
+          <Box
+            mx={'auto'}
+            bg={'bg.muted'}
+            my={5}
+            display={'flex'}
+            p={4}
+            justifyContent={'center'}
+            alignItems={'center'}
+            maxW={'200px'}
+            borderRadius={'md'}
+          >
+            <Spinner size="md" />
+          </Box>
+        }
+      >
+        <SimpleGrid columns={{ sm: 2, md: 2, lg: 3, xl: 4 }} gap={4} p={'10px'}>
+          {isLoading && skeletons.map((el) => <GameCardSkeleton key={el} />)}
+          {games?.pages.map((game, index) => (
+            <React.Fragment key={index}>
+              {game?.results.map((game) => (
+                <GameCard key={game.id} game={game} />
+              ))}
+            </React.Fragment>
+          ))}
+        </SimpleGrid>
+      </InfiniteScroll>
+    </>
   );
 };
 
