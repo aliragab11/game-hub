@@ -3,14 +3,23 @@ import GameAttributes from '@/components/custom/GameAttributes';
 import GameScreenshots from '@/components/custom/GameScreenshots';
 import GameTrailer from '@/components/custom/GameTrailer';
 import useGame from '@/hooks/useGame';
-import { GridItem, Heading, SimpleGrid, Spinner } from '@chakra-ui/react';
+import { Flex, GridItem, Heading, SimpleGrid, Spinner } from '@chakra-ui/react';
 import { useParams } from 'react-router';
 
 const GameDetailPage = () => {
   const { slug } = useParams();
   const { data: game, isLoading, error } = useGame(slug!);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <Flex
+        minH={'calc(100vh - 80px)'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
+        <Spinner size={'xl'} />
+      </Flex>
+    );
   if (error || !game) throw error;
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={5} p={5}>
