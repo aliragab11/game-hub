@@ -21,7 +21,7 @@ const GameDetailPage = () => {
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>
-      <GridItem>
+      <GridItem spaceY={2}>
         <GameTrailer gameId={game.id} />
         <GameScreenshots gameId={game.id} />
       </GridItem>
