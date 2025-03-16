@@ -13,13 +13,15 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card.Root overflow="hidden">
+    <Card.Root
+      overflow="hidden"
+      _hover={{
+        transform: 'scale(1.03)',
+        transition: 'all 0.15s ease-in',
+      }}
+    >
       <Link to={`/games/${game.slug}`}>
-        <Image
-          src={getCroppedImage(game.background_image)}
-          alt={game.name}
-          _hover={{ transform: 'scale(1.03)', transition: 'all 0.15s ease-in' }}
-        />
+        <Image src={getCroppedImage(game.background_image)} alt={game.name} />
         <Card.Body>
           <HStack justifyContent={'space-between'} mb={3}>
             <PlatformIconList
