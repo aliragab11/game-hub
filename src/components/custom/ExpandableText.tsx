@@ -19,7 +19,8 @@ const ExpandableText = ({ children, maxChars = 300 }: Props) => {
         size="xs"
         fontWeight="bold"
         variant="surface"
-        colorPalette="yellow"
+        bg={'yellow.200'}
+        color={'black'}
         ml={1}
         onClick={() => setisExpanded((c) => !c)}
       >
