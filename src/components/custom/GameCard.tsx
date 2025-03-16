@@ -5,7 +5,7 @@ import CriticScore from './CriticScore';
 import getCroppedImage from '../../services/image-url';
 import Emoji from './Emoji';
 import { Link } from 'react-router';
-import { Game } from '@/entities/Game';
+import Game from '@/entities/Game';
 
 interface Props {
   game: Game;
